@@ -35,6 +35,23 @@ login_manager.init_app(app)
 login_manager.login_message_category = 'info'
 
 
+from E_data_system.views.routes import view
+from E_data_system.admin.routes import admin
+from E_data_system.staffs.routes import staff_page
+from E_data_system.account.routes import account
+from  E_data_system.youthpage.routes import youth
+from E_data_system.errors.routes import my_error_page
+from E_data_system.authentication.routes import authent
+from   E_data_system.image_utils.img_process import pic_utils
 
 
+
+app.register_blueprint(view, url_prefix='/')
+app.register_blueprint(youth, url_prefix='/')
+app.register_blueprint(admin, url_prefix='/')
+app.register_blueprint(authent, url_prefix='/')
+app.register_blueprint(account, url_prefix='/')
+app.register_blueprint(pic_utils, url_prefix='/')
+app.register_blueprint(staff_page, url_prefix='/')
+app.register_blueprint(my_error_page, url_prefix='/')
 
