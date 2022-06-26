@@ -6,9 +6,9 @@ from flask import url_for, flash, request, redirect, render_template
 
 
 
-admin = Blueprint('admin', __name__)
+admin_only = Blueprint('admin', __name__)
 
 
-@admin.route('/admin')
+@admin_only.route('/admin')
 def admin():
-    return render_template('adminpage.html')
+    return render_template('admin_page.html')
