@@ -8,12 +8,13 @@ from E_data_system import login_manager
 from flask_admin.contrib.sqla import ModelView
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy import Table, Column, Integer, ForeignKey
-from itsdangerous import TimedJSONWEBSignatureSerializer as Serializer
+# from itsdangerous import TimedJSONWEBSignatureSerializer as Serializer
 
 
 @login_manager.user_loader
-def load_user(user_id):
+def user_loader(user_id):
     return User.query.get(int(user_id))
+
 
 
 

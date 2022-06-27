@@ -11,3 +11,8 @@ authent = Blueprint('authent', __name__)
 @authent.route('/signup')
 def signup():
     return render_template('signup.html')
+
+
+@authent.route('/login')
+def login():
+    return render_template('login.html')
