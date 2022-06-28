@@ -1,9 +1,15 @@
+.navbar {
+    background-color: rgb(80, 77, 77) !important;
+    border-bottom: 3px solid #b62b08;
+}
+
+
 .loginbtn {
     border: 1px solid #dbae0c;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    line-height: 45px;
-    border-radius: 8px;
+    line-height: 42px;
+    border-radius: 6px;
     color: #07294d;
     cursor: pointer;
     position: relative;
@@ -27,16 +33,8 @@
 }
 
 
-
-.cent{
-    
-        /* padding:auto 0  50px ; */
-        font-size: 16px;
-        font-family: "Montserrat", sans-serif;
-        float: none;
-        display: inline-block;
-        zoom: 1;
-
-        
-
+.middle-text{
+font-size: 1.5rem !important;
+/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important; */
+color: #b62b08 !important;
 }
