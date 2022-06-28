@@ -1,0 +1,42 @@
+.loginbtn {
+    border: 1px solid #dbae0c;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    line-height: 45px;
+    border-radius: 8px;
+    color: #07294d;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+    -webkit-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    background-color: #ffc600;
+}
+
+.loginbtn:hover {
+    color: #ffc600;
+    border-color: #07294d;
+    background-color: #07294d;
+}
+
+.loginbtn:disabled {
+    color: #ffc600;
+    border-color: #07294d;
+    background-color: #07294d;
+}
+
+
+
+.cent{
+    
+        /* padding:auto 0  50px ; */
+        font-size: 16px;
+        font-family: "Montserrat", sans-serif;
+        float: none;
+        display: inline-block;
+        zoom: 1;
+
+        
+
+}
