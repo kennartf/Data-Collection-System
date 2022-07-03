@@ -7,18 +7,203 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% block head %}
+
     <title>{% block title %}Home Page{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/style.css')}}">
+
 
     {% endblock %}
 </head>
 
 <body>
     {% block content %}
-    <div class="container">
-        <img src="http://i.giphy.com/13Xkz5sLdjGiQw.gif" />
-    </div>
+    <section id="slider-part" class="slider-active">
+        <div class="single-slider bg_cover pt-150"
+            style="background-image: url({url_for('static', filename='/imges_/s-1.jpg')})" data-over="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="slider-cont">
+                            <h2 data-animation="bounceInLeft" data-delay="ls">The way to learn and earn</h2>
+                            <p data-animation="fadeInUp" data-delay="1.3s">
+                                The church of Christ
+                            </p>
 
-    <h4>This is the home page</h4>
+                            <ul>
+                                <li>
+                                    <a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="#">Read
+                                        More</a>
+                                </li>
+                                <li>
+                                    <a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2"
+                                        href="#">Get Started</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="single-slider bg_cover pt-150"
+            style="background-image: url({url_for('static', filename='/imges_/s-2.jpg')})" data-over="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="slider-cont">
+                            <h2 data-animation="bounceInLeft" data-delay="ls">The way to learn and earn</h2>
+                            <p data-animation="fadeInUp" data-delay="1.3s">
+                                The church of Christ
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="#">Read
+                                        More</a>
+                                </li>
+                                <li>
+                                    <a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2"
+                                        href="#">Get
+                                        Started</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="single-slider bg_cover pt-150"
+            style="background-image: url({url_for('static', filename='/imges_/s-3.jpg')})" data-over="4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-9">
+                        <div class="slider-cont">
+                            <h2 data-animation="bounceInLeft" data-delay="ls">The way to learn and earn</h2>
+                            <p data-animation="fadeInUp" data-delay="1.3s">
+                                The church of Christ
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="#">Read
+                                        More</a>
+                                </li>
+                                <li>
+                                    <a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2"
+                                        href="#">Get
+                                        Started</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-part" class="pt-65">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="section-title mt-50">
+                        <h5>About us</h5>
+                        <h2>Welcome to</h2>
+                        <h2><i>The church</i></h2>
+                    </div>
+
+                    <div class="about-cont">
+                        <p>
+                            The church of christ
+                        </p>
+                        <a href="#" class="main-btn mt-55">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="about-event mt-50">
+                        <div class="event-title">
+                            <h3>Upcoming events</h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="singel-event">
+                                    <span><i class="fa fa-calendar"></i> 2 December 2018</span>
+                                    <a href="events-singel">
+                                        <h4>Designers Workshop</h4>
+                                    </a>
+                                    <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
+                                    <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="singel-event">
+                                    <span><i class="fa fa-calendar"></i> 2 December 2018</span>
+                                    <a href="events-singel">
+                                        <h4>Head Conference</h4>
+                                    </a>
+                                    <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
+                                    <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="singel-event">
+                                    <span><i class="fa fa-calendar"></i> 2 December 2018</span>
+                                    <a href="events-singel">
+                                        <h4>Head Conference</h4>
+                                    </a>
+                                    <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
+                                    <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-bg">
+            <img src="{{ url_for('static', filename='images/about/bg-1.png')}}" alt="About" />
+        </div>
+    </section>
+
+    <section id="apply-aprt" class="pb-120">
+        <div class="container">
+            <div class="apply">
+                <div class="row no-gutters">
+                    <div class="col-lg-6">
+                        <div class="apply-cont apply-color-1">
+                            <h3>Apply for course</h3>
+                            <p> New courses are begin time to time, apply to register your
+                                name in upcoming courses.
+                            </p><a href="#" class="main-btn">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="apply-cont apply-color-2">
+                            <h3>Apply for internship</h3>
+                            <p> Join us! To grow up your skills, Newly gradudated studnets has
+                                high priority.</p>
+                            <a href="#" class="main-btn">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
 
     {% endblock %}
 </body>
