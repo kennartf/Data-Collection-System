@@ -1,4 +1,11 @@
-html, body{
+@font-face {
+    font-family: kennfont;
+    src: url(/static/fonts/JosefinSans-Medium.ttf);
+}
+
+
+html,
+body {
     height: 100%;
     padding: 0px;
     margin: 0px;
@@ -7,45 +14,54 @@ html, body{
 }
 
 /* !! important this give room to the page if nothing is there */
-.page-wrapper{
+.page-wrapper {
     min-height: 100%;
 }
 
-.footer{
-    background: #303036;
+.footer {
+    background: #3f1414;
     color: #d3d3d3;
-    height: 400px;
+    height: 380px;
     position: relative;
 }
 
-.footer .footer-content{
-    border: 1px solid red;
-    height: 350px;
+.footer .footer-content {
+    /* border: 1px solid red; */
+    height: 330px;
     display: flex;
 }
 
-
-.footer .footer-content .footer-section{
+.footer .footer-content .footer-section {
     flex: 1;
     padding: 25px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 
-.footer .footer-content p, h2, .footer .footer-content{
+.footer .footer-content p,
+h2,
+.footer .footer-content {
     color: white;
 }
 
-.footer .footer-content .about .contact span{
+.footer .footer-content .about .contact span {
+    display: block;
+    font-size: 1.1em;
+    margin: 8px;
+    display: block;
+    font-size: 1.1em;
+    margin: 8px;
+}
+
+.footer .footer-content  .contact-form span {
 display: block;
-font-size: 1.1em;
 margin: 8px;
 }
 
-.footer .footer-content .about h2 span{
+.footer .footer-content .about h2 span {
     color: aqua;
 }
 
-.footer .footer-content .about .socials a{
+.footer .footer-content .about .socials a {
     border: 1px solid gray;
     width: 45px;
     height: 41px;
@@ -55,11 +71,55 @@ margin: 8px;
     display: inline-block;
     font-size: 1.3em;
     border-radius: 5px;
+    transition: all .3s;
 }
 
-.footer .footer-bottom{
-    background: #021d3a;
-    color: #686868;
+.footer .footer-content .about .socials a:hover {
+    border: 1px solid white;
+    color: white;
+    transition: all .3s;
+    font-family: kennfont;
+}
+
+.footer .footer-content .links ul a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    transition: all .3s;
+}
+
+.footer .footer-content .links ul a:hover {
+    color: white;
+    margin-left: 15px;
+    transition: all .3s;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 934px) {
+    .content {
+        width: 100%;
+    }
+    
+    /* footer strech */
+    .footer {
+        height: auto;
+    }
+
+    /* footer content arrangement */
+    .footer .footer-content {
+        height: auto;
+        flex-direction: column;
+    }
+
+    /* form display */
+    .footer .footer-content .contact-form {
+        padding-bottom: 90px;
+    }
+}
+
+.footer .footer-bottom {
+    background: #470202;
+    color: #ffffff;
     height: 50px;
     width: 100%;
     text-align: center;
@@ -67,4 +127,27 @@ margin: 8px;
     bottom: 0px;
     left: 0px;
     padding-top: 20px;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 35px;
+    background-color: #ffc600;
+    color: #fff;
+    font-size: 28px;
+    border-radius: 5px;
+    z-index: 99;
+    text-align: center;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+    display: none;
+}
+
+.back-to-top:hover {
+    color: #fff;
+    background-color: #021d3a;
 }
