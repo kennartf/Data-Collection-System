@@ -1,5 +1,4 @@
 from datetime import datetime
-from enum import unique
 from sqlalchemy.sql import func
 from flask_admin import Admin
 from flask_login import UserMixin
@@ -20,6 +19,20 @@ def user_loader(user_id):
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer(), primary_key=True)
+    branch_id = db.Column(db.String(length=100), nullable=False, unique=True)
+    username= db.Column(db.String(length=100), nullable=False, unique=True)
+    email = db.Column(db.String(length=100), nullable=False, unique=True)
+    password = db.Column(db.String(length=100), nullable=False, unique=True)
+    confirm_password = db.Column(db.String(length=50), nullable=False, unique=True)
+    date_created = db.Column(db.DateTime(timezone=True), nullable=False, default=func.now())
+    
+    def __repr__(self):
+        return f"('{self.branch_id}', '{self.username}')"
+
+
+
+class CRM_Assembly(db.Model, UserMixin):
+    id = db.Column(db.Integer(), primary_key=True)
     name_of_zone = db.Column(db.String(length=100), nullable=False, unique=True)
     name_of_assembly = db.Column(db.String(length=100), nullable=False, unique=True)
     head_teacher = db.Column(db.String(length=100), nullable=False, unique=True)
@@ -32,6 +45,33 @@ class User(db.Model, UserMixin):
     no_of_souls = db.Column(db.String(length=50), nullable=False, unique=True)
     baptised = db.Column(db.String(length=50), nullable=False, unique=True)
     offering = db.Column(db.String(length=50), nullable=False, unique=True)
-
+    date_created = db.Column(db.DateTime(timezone=True), nullable=False, default=func.now())
+    
     def __repr__(self):
         return f"('{self.name_of_zone}', '{self.name_of_assembly}')"
+
+
+class Youth_Registration(db.Model, UserMixin):
+    id = db.Column(db.Integer(), primary_key=True)
+    name_of_member = db.Column(db.String(length=100), nullable=False, unique=True)
+    gender = db.Column(db.String(length=100), nullable=False, unique=True)
+    national_level= db.Column(db.String(length=100), nullable=False, unique=True)
+    position1 = db.Column(db.String(length=100), nullable=False, unique=True)
+    name_of_region = db.Column(db.String(length=50), nullable=False, unique=True)
+    position2 = db.Column(db.String(length=50), nullable=False, unique=True)
+    name_of_distric = db.Column(db.String(length=50), nullable=False, unique=True)
+    position3 = db.Column(db.String(length=50), nullable=False, unique=True)
+    name_of_zone = db.Column(db.String(length=50), nullable=False, unique=True)
+    position4 = db.Column(db.String(length=50), nullable=False, unique=True)
+    name_of_assembly = db.Column(db.String(length=50), nullable=False, unique=True)
+    position5 = db.Column(db.String(length=50), nullable=False, unique=True)
+    email = db.Column(db.String(length=50), nullable=False, unique=True)
+    town = db.Column(db.String(length=50), nullable=False, unique=True)
+    nationality = db.Column(db.String(length=50), nullable=False, unique=True)
+    Language = db.Column(db.String(length=50), nullable=False, unique=True)
+    contact = db.Column(db.String(length=50), nullable=False, unique=True)
+    level_of_education = db.Column(db.String(length=50), nullable=False, unique=True)
+    date_created = db.Column(db.DateTime(timezone=True), nullable=False, default=func.now())
+    
+    def __repr__(self):
+        return f"('{self.name_of_member}', '{self.gender}', '{self.national_level}')"

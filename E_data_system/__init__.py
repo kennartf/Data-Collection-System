@@ -9,7 +9,6 @@ from E_data_system.hidden.config import mail_username, mail_password
 
 
 
-
 app = Flask(__name__)
 
 
@@ -23,7 +22,6 @@ app.config['MAIL_USERNAME'] = mail_username
 app.config['MAIL_PASSWORD'] = mail_password
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False 
-
 
 
 mail = Mail(app)
