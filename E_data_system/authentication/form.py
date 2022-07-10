@@ -3,7 +3,7 @@ from flask_login import current_user
 from E_data_system .models import User
 from flask_wtf.file import FileField, FileAllowed
 from wtforms. validators import Email, EqualTo, Length, ValidationError, DataRequired
-from wtforms import StringField, PasswordField, BooleanField, SelectField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SelectField, SubmitField, BooleanField
 
 
 class RegisterForm(FlaskForm):
@@ -35,8 +35,9 @@ class RegisterForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    branch_id = StringField(validators=[DataRequired()], render_kw={'placeholder': 'Email address'})
+    branch_id = StringField(validators=[DataRequired()], render_kw={'placeholder': 'Branch id'})
     password = PasswordField(validators=[DataRequired()], render_kw={'placeholder': 'Password'})
+    remember = BooleanField(label='Remember')
     submit = SubmitField(label='Log In')
 
     # radio = RadioField(choices=[('value', 'Male'), ('value', 'Female')], default='Male')

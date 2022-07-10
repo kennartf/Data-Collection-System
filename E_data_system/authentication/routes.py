@@ -1,3 +1,4 @@
+from crypt import methods
 import email
 import imp
 from flask import Blueprint
@@ -13,7 +14,7 @@ authent = Blueprint('authent', __name__)
 
 
 
-@authent.route('/signup')
+@authent.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = RegisterForm()
     if form.validate_on_submit():
@@ -26,11 +27,11 @@ def signup():
     if form.errors != {}:
         for err_msg in form.errors.values():
             flash(f'Registration unsuccesfull {err_msg}', category='error')
-    return render_template('signup.html')
+    return render_template('signup.html', form=form)
 
 
 
-@authent.route('/login')
+@authent.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -41,7 +42,7 @@ def login():
             return redirect(url_for('youth.ythdashbord'))
         else:
             flash(f'Login uncessful! check email & password', category='error')
-    return render_template('login.html')
+    return render_template('login.html', form=form)
 
 
 

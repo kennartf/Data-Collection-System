@@ -50,7 +50,7 @@
                                                 <!-- mx- -->
           <ul class="navbar-nav justify-content-center middle">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" right-16><strong>Home |</strong></a>
+              <a class="nav-link active" aria-current="page" href="{{ url_for('view.home')}}" right-16><strong>Home |</strong></a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="#" right-16><strong>Youth Login |</strong></a>
@@ -65,7 +65,7 @@
           <li>
             <a href="{{ url_for('authent.login')}}">
               <button class="loginbtn" data-bs-toggle="modal"
-                data-bs-target="#student"><strong>Login|Register</strong></button>
+                data-bs-target="#student"><strong>Staff Only</strong></button>
             </a>
           </li>
         </ul>
@@ -85,7 +85,6 @@
           who make disciples. The church is a way for followers of Jesus to this mission.
           At its best, the unity in Christ we experience in the church can even give us a taste of the glory to come in
           Revelation.
-
         </p>
         <div class="socials">
           <a href="#"><i class="fa fa-facebook"></i></a>
@@ -117,6 +116,7 @@
       &copy; thedevinehealerschurch@mail.com
     </div>
   </div>
+
   <a class="back-to-top" href="#"><i class="fa fa-angle-up"></i></a>
 
 

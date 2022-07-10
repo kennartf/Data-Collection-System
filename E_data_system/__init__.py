@@ -12,7 +12,7 @@ from E_data_system.hidden.config import mail_username, mail_password
 app = Flask(__name__)
 
 
-app.config['SQLALchemy_DATABASE_URI'] = 'sqlite:///data.db'
+app.config['SQLALchemy_DATABASE_URI'] = 'sqlite:///record_data.db'
 app.config['SECRET_KEY'] = 'fed557ce4beb7dd1f0de8161f14441cc2717524e12054e3b71fd27aa55e5'
 
 

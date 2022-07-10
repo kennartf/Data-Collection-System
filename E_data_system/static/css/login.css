@@ -3,47 +3,134 @@
     font-family: kennfont;
 }
 
-.navbar {
-    border-bottom: 3px solid #b62b08;
-}
-
-/*navbar color*/
-*[right-16] {
-    color: brown !important;
-    font-family: kennfont;
-    font-size: 1.1rem;
-}
-
-.loginbtn {
-    border: 1px solid #ffc600;
-    font-family: kennfont;
-    font-size: 1.01rem;
-    line-height: 40px;
-    border-radius: 6px;
-    color: #07294d;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    z-index: 5;
-    -webkit-transition: 0.4s ease-in-out;
-    transition: 0.4s ease-in-out;
-    background-color: #ffc600;
-}
-
-.loginbtn:hover {
-    color: #ffc600;
-    border-color: #07294d;
-    background-color: #07294d;
-}
-
-.loginbtn:disabled {
-    color: #ffc600;
-    border-color: #07294d;
-    background-color: #07294d;
-}
-
-
 /* !! important this give room to the page if nothing is there */
 .page-wrapper {
     min-height: 100%;
 }
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+.container{
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login{
+    width: 800px;
+    min-height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #222;
+    display: flex;
+    box-shadow: 15px 5px 30px rgba(0, 0, 0, 0);
+}
+
+.content{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #d8dddc;
+    transition: 0.5s;
+}
+
+.content img{
+    width: 100%;
+}
+
+.content:hover img{
+    transform: scale(1.1);
+}
+
+.loginform{
+    flex-basis: 50%;
+    background: #333;
+    font-family: roboto;
+    padding: 25px;
+}
+
+.loginform h1{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.tbox{
+    border-radius: 3px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border: 1px solid #55efc4;
+    width: 100%;
+    height: 35;
+    margin: 30px 0;
+}
+
+.tbox input{
+    background: transparent;
+    width: 90%;
+    outline: none;
+    border: 0;
+    height: 2.2rem;
+    padding-left: 5px;
+}
+
+::placeholder{
+    color: #777;
+}
+
+.tbox i{
+    color: #55efc4;
+    font-size: 15px;
+    padding: 7px;
+}
+
+form .btn{
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    background: #d2dfdc;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.social{
+    margin-top: 25px;
+    list-style: none;
+    text-align: center;
+}
+
+.social li{
+    display: inline-block;
+}
+
+.social li i{
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    border: 1px solid #55efc4;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* **Responsive Design** */
+/* @media (max-width: 934px) { */
+@media only screen and (max-width: 768px){
+    .login{
+        flex-direction: column;
+        margin: 0 15px;
+    }
+}
+    
