@@ -6,6 +6,7 @@ youth = Blueprint('youth', __name__)
 
 
 
-@youth.route('/ypage')
-def ypage():
+@youth.route('/ythdashbord')
+def ythdashbord():
+    
     return render_template('youthpage.html')

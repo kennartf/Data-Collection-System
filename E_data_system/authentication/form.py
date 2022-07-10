@@ -37,5 +37,6 @@ class RegisterForm(FlaskForm):
 class LoginForm(FlaskForm):
     branch_id = StringField(validators=[DataRequired()], render_kw={'placeholder': 'Email address'})
     password = PasswordField(validators=[DataRequired()], render_kw={'placeholder': 'Password'})
-    # radio = RadioField(choices=[('value', 'Male'), ('value', 'Female')], default='Male')
     submit = SubmitField(label='Log In')
+
+    # radio = RadioField(choices=[('value', 'Male'), ('value', 'Female')], default='Male')
