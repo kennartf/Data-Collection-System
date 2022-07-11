@@ -1,9 +1,6 @@
-from crypt import methods
-import email
-import imp
 from flask import Blueprint
 from flask_mail import Message
-from E_data_system.models import User
+from E_data_system .models import User
 from E_data_system import db, bcrypt, mail
 from .form import RegisterForm, LoginForm
 from flask import render_template, flash, request, redirect, url_for, request 
@@ -48,4 +45,5 @@ def login():
 
 @authent.route('/logout')
 def logout():
+    logout_user()
     return redirect(url_for('view.home'))

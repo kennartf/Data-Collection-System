@@ -7,10 +7,10 @@ from wtforms import StringField, PasswordField, BooleanField, SelectField, Submi
 
 
 class RegisterForm(FlaskForm):
-    branch_id = StringField(validators=[DataRequired(), Length(min=5, max=20)],  render_kw={'placeholder': 'Branch id'})
-    username = StringField(validators=[DataRequired(), Email()], render_kw={'placeholder': 'Usename'})
-    email = StringField(validators=[DataRequired()], render_kw={'placeholder': 'email address'})
-    password = PasswordField(validators=[DataRequired(), Length(min=3, max=20)], render_kw={'placeholder': 'Password (at least 3-20 char)'})
+    branch_id = StringField(validators=[DataRequired(), Length(min=1, max=20)],  render_kw={'placeholder': 'Branch id'})
+    username = StringField(validators=[DataRequired()], render_kw={'placeholder': 'Usename'})
+    email = StringField(validators=[DataRequired(), Email()], render_kw={'placeholder': 'email address'})
+    password = PasswordField(validators=[DataRequired(), Length(min=1, max=20)], render_kw={'placeholder': 'Password (at least 3-20 char)'})
     confirm_password = PasswordField(validators=[DataRequired(), EqualTo('password')], render_kw={'placeholder': 'Confirm_Password'})
     submit = SubmitField(label='Sign Up')
 

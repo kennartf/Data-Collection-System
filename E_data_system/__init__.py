@@ -8,12 +8,11 @@ from flask_login import login_manager, LoginManager
 from E_data_system.hidden.config import mail_username, mail_password
 
 
-
 app = Flask(__name__)
 
 
-app.config['SQLALchemy_DATABASE_URI'] = 'sqlite:///record_data.db'
-app.config['SECRET_KEY'] = 'fed557ce4beb7dd1f0de8161f14441cc2717524e12054e3b71fd27aa55e5'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///record.db'
+app.config['SECRET_KEY'] = 'd6ac11bed59b75a6bmn4310nvbv4454ab'
 
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
