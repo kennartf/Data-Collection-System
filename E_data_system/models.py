@@ -51,7 +51,7 @@ class CRM_Assembly(db.Model, UserMixin):
     baptised = db.Column(db.String(length=50), nullable=False, unique=True)
     offering = db.Column(db.String(length=50), nullable=False, unique=True)
     user = db.Column(db.Integer(), db.ForeignKey('user.id', ondelete='CASCADE'), nullable=False)
-    date_created = db.Column(db.DateTime(timezone=True), nullable=False, default=func.now())
+    # date_created = db.Column(db.DateTime(timezone=True), nullable=False, default=func.now())
     
     def __repr__(self):
         return f"('{self.name_of_zone}', '{self.name_of_assembly}')"
@@ -78,7 +78,7 @@ class Youth_Registration(db.Model, UserMixin):
     contact = db.Column(db.String(length=50), nullable=False, unique=True)
     level_of_education = db.Column(db.String(length=50), nullable=False, unique=True)
     user = db.Column(db.Integer(), db.ForeignKey('user.id', ondelete='CASCADE'), nullable=False)
-    date_created = db.Column(db.DateTime(timezone=True), nullable=False, default=func.now())
+    # date_created = db.Column(db.DateTime(timezone=True), nullable=False, default=func.now())
     
     def __repr__(self):
         return f"('{self.name_of_member}', '{self.gender}', '{self.national_level}')"
