@@ -4,7 +4,7 @@ from E_data_system .models import User
 from E_data_system import db, bcrypt, mail
 from .form import RegisterForm, LoginForm
 from flask import render_template, flash, request, redirect, url_for, request 
-from flask_login import login_user, logout_user, current_user, login_required
+from flask_login import login_user, logout_user
 
 
 authent = Blueprint('authent', __name__)
@@ -43,7 +43,8 @@ def login():
 
 
 
-@authent.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('view.home'))
+# @authent.route('/logout')
+# @logout_user
+# def logout():
+    
+#     return redirect(url_for('view.home'))
