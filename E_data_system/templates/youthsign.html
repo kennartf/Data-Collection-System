@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block head %}
+    <title>{% block title %}Youth Signup{% endblock %}</title>
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='/css/ysignup.css')}}"/>
+
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='/bootstrap-4.1.3/css/bootstrap.min.css')}}"/>
+
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='/bootstrap-4.1.3/js/bootstrap.min.js')}}"/>
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    <div class="page-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="signup-form">
+              <form action="" class="mt-5 border p-4 bg-light shadow" method="post">
+                {{ form.hidden_tag()}}
+                <h4 class="mb-5 text-secondary">Create Your Account</h4>
+                <div class="row">
+                  <div class="mb-3 col-md-6">
+                   {{ form.branch_id(class='form-control')}}
+                  </div>
+
+                  <div class="mb-3 col-md-6">
+                    {{ form.username(class='form-control')}}
+                  </div>
+
+                  <div class="mb-3 col-md-12">
+                   {{ form.email(class='form-control')}}
+                  </div>
+
+                  <div class="mb-3 col-md-6">
+                   {{ form.password(class='form-control')}}
+                  </div>
+
+                  <div class="mb-3 col-md-6">
+                    {{ form.confirm_password(class='form-control')}}
+                  </div>
+
+                  <div class="col-md-12 mm">
+                    <button class="btn btn-primary float-end">Signup Now
+                    </button>
+                  </div>
+                </div>
+
+                <p class="text-center mt-3 text-secondary">
+                    Already have account
+                    <a href="{{url_for('youth.ylogin')}}">Login Now</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--====== jquery js ======-->
+    <script src="{{url_for('static', filename='jss/vendor/modernizr-3.6.0.min.js')}}"></script>
+    <script src="{{url_for('static', filename='jss/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{url_for('static', filename='jss/bootstrap.min.js')}}"></script>
+    {% endblock %}
+  </body>
+</html>

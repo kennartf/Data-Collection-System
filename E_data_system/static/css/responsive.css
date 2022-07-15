@@ -1,18 +1,7 @@
-/*
-  Theme Name: Edubin - LMS Education HTML Template
-  Author: Humayun Ahmed
-  Author URL: https://themeforest.net/user/pixelcurve
-  Support: humayunahmed82@gmail.com
-  Description: Creative  HTML5 template.
-  Version: 1.0
-*/
-
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
 
-
 }
-
 
 /* Normal desktop :992px. */
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -20,13 +9,16 @@
 .navigation .navbar .navbar-nav li {
 	margin-right: 35px;
 }
+
 .singel-course .cont {
 	padding-left: 25px;
 	padding-right: 25px;
 }
+
 .singel-course .course-teacher .name {
 	margin-left: 5px;
 }
+
 .singel-course .course-teacher .admin ul li {
 	margin-right: 5px;
 }
@@ -1379,33 +1371,5 @@
 	padding-top: 40px;
 	padding-bottom: 70px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

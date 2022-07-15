@@ -50,14 +50,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-          <!-- mx- -->
+                      <!-- mx- -->
           <ul class="navbar-nav justify-content-center middle">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{ url_for('view.home')}}" right-16><strong>Home
                   |</strong></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#" right-16><strong>Youth Login |</strong></a>
+              <a class="nav-link active" href="{{url_for('youth.ylogin')}}" right-16><strong>Youth Login |</strong></a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="#" right-16><strong>About</strong></a>
@@ -67,7 +67,7 @@
 
         <ul class="navbar-nav justify-content-right">
           <li>
-            <a href="{{ url_for('authent.login')}}">
+            <a href="{{url_for('admin.login')}}">
               <button class="loginbtn" data-bs-toggle="modal" data-bs-target="#student"><strong>Staff
                   Only</strong></button>
             </a>
