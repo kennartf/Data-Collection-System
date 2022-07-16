@@ -13,7 +13,12 @@ from sqlalchemy import Table, Column, Integer, ForeignKey
 
 
 @login_manager.user_loader
-def user_loader(user_id):
+def load_user(user_id):
+    return AdminSession.query.get(int(user_id))
+
+
+@login_manager.user_loader
+def load_user(user_id):
     return User.query.get(int(user_id))
 
 
@@ -27,7 +32,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(length=100), nullable=False, unique=True)
     image_file = db.Column(db.String(100), nullable=False, default='default.jpeg')
     date_created = db.Column(db.DateTime(timezone=True), nullable=False, default=func.now())
-    crm_assembly = db.relationship('CRM_Assembly', backref='author', lazy=True, passive_deletes=True)
+    crm_assembly = db.relationship('CRMAssembly', backref='author', lazy=True, passive_deletes=True)
     youth_registration = db.relationship('Youth_Registration', backref='author', lazy=True, passive_deletes=True)
    
     
@@ -36,7 +41,7 @@ class User(db.Model, UserMixin):
 
 
 
-class CRM_Assembly(db.Model, UserMixin):
+class CRMAssembly(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name_of_zone = db.Column(db.String(length=100), nullable=False, unique=True)
     name_of_assembly = db.Column(db.String(length=100), nullable=False, unique=True)
@@ -57,7 +62,7 @@ class CRM_Assembly(db.Model, UserMixin):
         return f"('{self.name_of_zone}', '{self.name_of_assembly}')"
 
 
-class Youth_Registration(db.Model, UserMixin):
+class Youth_Registration(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name_of_member = db.Column(db.String(length=100), nullable=False, unique=True)
     gender = db.Column(db.String(length=100), nullable=False, unique=True)
@@ -82,3 +87,32 @@ class Youth_Registration(db.Model, UserMixin):
     
     def __repr__(self):
         return f"('{self.name_of_member}', '{self.gender}', '{self.national_level}')"
+
+
+
+class AdminSession(db.Model, UserMixin):
+    id = db.Column(db.Integer(), primary_key=True)
+    branch_id = db.Column(db.String(length=100), nullable=False, unique=True)
+    email = db.Column(db.String(length=100), nullable=False, unique=True)
+    password = db.Column(db.String(length=100), nullable=False)
+    is_active = db.Column(db.Boolean, default=False)
+    
+    def __repr__(self):
+        return f"AdminSession('{self.email}')"
+
+
+
+admin = Admin(app, name='Admin Panel', template_mode='bootstrap3')
+
+
+class Controller(ModelView):
+    def is_accessible(self):
+        if current_user.is_active and current_user.is_active:
+            return current_user.is_active
+        else:
+            return abort(404)
+
+admin.add_view(Controller(User, db.session))
+admin.add_view(Controller(CRMAssembly, db.session))
+admin.add_view(Controller(Youth_Registration, db.session))
+admin.add_view(Controller(AdminSession, db.session))

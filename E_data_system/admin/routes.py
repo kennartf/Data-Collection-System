@@ -7,21 +7,21 @@ from flask_login import login_required, login_user, logout_user, current_user
 
 
 
-admin = Blueprint('admin', __name__)
+admin_= Blueprint('admin_', __name__)
 
 
-@admin.route('/staff')
+@admin_.route('/staff')
 @login_required
 def staff():
     return render_template('admin_page.html')
 
 
-@admin.route('/signup', methods=['GET', 'POST'])
+@admin_.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = ARegisterForm()
     if form.validate_on_submit():
         hashed_pwd = bcrypt.generate_password_hash(form.password.data)
-        user = User(branch_id=form.branch_id.data, username=form.username.data, email=form.email.data, password=hashed_pwd)
+        user = User(branch_id=form.branch_id.data, email=form.email.data, password=hashed_pwd, is_active=True)
         db.session.add(user)
         db.session.commit()
         flash(f'Account created successfully {user.email}', category='success')
@@ -33,7 +33,7 @@ def signup():
 
 
 
-@admin.route('/login', methods=['GET', 'POST'])
+@admin_.route('/login', methods=['GET', 'POST'])
 def login():
     form = ALoginForm()
     if form.validate_on_submit():
@@ -41,14 +41,14 @@ def login():
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             flash(f'Logged in as {user.branch_id}')
-            return redirect(url_for('admin.staff'))
+            return redirect(url_for('admin_.staff'))
         else:
             flash(f'Login uncessful! check email & password', category='error')
     return render_template('adminlog.html', form=form)
 
 
 
-@admin.route('/logout')
+@admin_.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('view.home'))

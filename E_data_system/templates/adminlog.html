@@ -37,7 +37,6 @@
                                 {{ form.branch_id(class='form-control') }}
                             </div>
 
-                            <br>
                             <div class="mb-3">
                                 {{ form.password(class='form-control') }}
                             </div>
@@ -49,7 +48,7 @@
                             </div>
 
                             <div class="modal-footer d-block">
-                                <p class="float-start">Not having an account <a href="{{ url_for('admin.signup')}}">Signup</a></p>
+                                <p class="float-start">Not having an account <a href="{{ url_for('admin_.signup')}}">Signup</a></p>
                                 {{ form.submit(class='btn btn-primary' ) }}
                             </div>
                         </form>
