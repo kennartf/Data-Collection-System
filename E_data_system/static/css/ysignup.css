@@ -3,14 +3,19 @@
     font-family: kennfont;
 }
 
+
+body{
+    background-color: #f8f8f1 !important;
+}
+
 /* !! important this give room to the page if nothing is there */
 .page-wrapper {
     min-height: 100%;
 }
 
 *{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .signup-form form{

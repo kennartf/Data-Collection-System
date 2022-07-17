@@ -41,7 +41,7 @@ def login():
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             flash(f'Logged in as {user.branch_id}')
-            return redirect(url_for('admin_.staff'))
+            return redirect(url_for('admin.index'))
         else:
             flash(f'Login uncessful! check email & password', category='error')
     return render_template('adminlog.html', form=form)
