@@ -1,63 +1,69 @@
 {% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% block head %}
     <title>{% block title %}Admin Login{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/adminsign.css')}}">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"> -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/adminsign.css')}}"
+    />
 
     {% endblock %}
-</head>
-<body>
+  </head>
+  <body>
     {% block content %}
     <div class="page-wrapper">
-        <!-- Click on Modal Button -->
-        <button type="button" class="btn btn-primary mx-auto d-block mt-5 loginbtn" data-bs-toggle="modal"
-            data-bs-target="#modalForm">
-            Login
-        </button>
+      <!-- Click on Modal Button -->
+      <button type="button"
+        class="btn btn-primary mx-auto d-block mt-5 loginbtn"
+        data-bs-toggle="modal"data-bs-target="#modalForm">Login
+      </button>
 
-        <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="POST">
-                            {{ form.hidden_tag() }}
-
-                            <div class="mb-3">
-                                {{ form.branch_id(class='form-control') }}
-                            </div>
-
-                            <div class="mb-3">
-                                {{ form.password(class='form-control') }}
-                            </div>
-
-                            <div class="mb-3 form-check">
-                                {{ form.remember(class='form-check-input') }}
-                                {{ form.remember.label }}
-                                <a href="#" class="float-end">Forgot Password</a>
-                            </div>
-
-                            <div class="modal-footer d-block">
-                                <p class="float-start">Not having an account <a href="{{ url_for('admin_.signup')}}">Signup</a></p>
-                                {{ form.submit(class='btn btn-primary' ) }}
-                            </div>
-                        </form>
-                    </div>
-                </div>
+      <div class="modal fade"id="modalForm"tabindex="-1"
+        aria-labelledby="exampleModalLabel"aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+              <button type="button"class="btn-close"
+                data-bs-dismiss="modal"aria-label="Close">
+              </button>
             </div>
+            <div class="modal-body">
+              <form method="POST">
+                {{ form.hidden_tag() }}
+
+                <div class="mb-3">
+                  {{ form.branch_id(class='form-control') }}
+                </div>
+
+                <div class="mb-3">
+                  {{ form.password(class='form-control') }}
+                </div>
+
+                <div class="mb-3 form-check">
+                  {{ form.remember(class='form-check-input') }} {{
+                  form.remember.label }}
+                  <a href="#" class="float-end">Forgot Password</a>
+                </div>
+
+                <div class="modal-footer d-block">
+                  <p class="float-start">
+                    Not having an account
+                    <a href="{{ url_for('admin_.signup')}}">Signup</a>
+                  </p>
+                  {{ form.submit(class='btn btn-primary' ) }}
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     {% endblock %}
-</body>
-
+  </body>
 </html>
