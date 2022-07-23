@@ -17,6 +17,7 @@ app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
 SECRET_KEY = 'development key'
 app.config.from_object(__name__)
 
+
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] =587
 app.config['MAIL_USERNAME'] = mail_username
@@ -29,7 +30,6 @@ mail = Mail(app)
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 login_manager = LoginManager()
-# login_manager.login_view = 'admin_.login'
 login_manager.login_view = 'youth.ylogin'
 login_manager.init_app(app)
 login_manager.login_message_category = 'info'
