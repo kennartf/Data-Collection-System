@@ -1,3 +1,4 @@
+from flask import abort
 from datetime import datetime
 from flask_admin import Admin
 from sqlalchemy.sql import func
@@ -6,6 +7,7 @@ from graphene import lazy_import
 from E_data_system import db, app
 from E_data_system import login_manager
 from flask_admin.contrib.sqla import ModelView
+from flask_security import UserMixin, RoleMixin
 from flask_login import UserMixin, current_user
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy import Table, Column, Integer, ForeignKey
@@ -66,15 +68,10 @@ class Youth_Registration(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name_of_member = db.Column(db.String(length=100), nullable=False, unique=True)
     gender = db.Column(db.String(length=100), nullable=False, unique=True)
-    national_level= db.Column(db.String(length=100), nullable=False, unique=True)
     position1 = db.Column(db.String(length=100), nullable=False, unique=True)
-    name_of_region = db.Column(db.String(length=50), nullable=False, unique=True)
     position2 = db.Column(db.String(length=50), nullable=False, unique=True)
-    name_of_distric = db.Column(db.String(length=50), nullable=False, unique=True)
     position3 = db.Column(db.String(length=50), nullable=False, unique=True)
-    name_of_zone = db.Column(db.String(length=50), nullable=False, unique=True)
     position4 = db.Column(db.String(length=50), nullable=False, unique=True)
-    name_of_assembly = db.Column(db.String(length=50), nullable=False, unique=True)
     position5 = db.Column(db.String(length=50), nullable=False, unique=True)
     email = db.Column(db.String(length=50), nullable=False, unique=True)
     town = db.Column(db.String(length=50), nullable=False, unique=True)

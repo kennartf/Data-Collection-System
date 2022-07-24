@@ -29,6 +29,7 @@ app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
+
 login_manager = LoginManager()
 login_manager.login_view = 'youth.ylogin'
 login_manager.init_app(app)
