@@ -3,6 +3,7 @@ import sqlite3
 from flask import Flask 
 from flask_mail import Mail
 from flask_bcrypt import Bcrypt
+from flask_security import Security
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import login_manager, LoginManager
 from E_data_system.hidden.config import mail_username, mail_password
@@ -15,6 +16,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///record.db'
 app.config['SECRET_KEY'] = 'd6ac11bed59b75a6bmn4310nvbv4454ab'
 app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
 SECRET_KEY = 'development key'
+SECURITY_KEY = 'llsdhfhdkjs'
+SECURITY_PASSWORD_SALT = 'iuyiuere9794'
+SECURITY_PASSWORD_HASH = 'sha512_crypt'
 app.config.from_object(__name__)
 
 
@@ -30,6 +34,7 @@ mail = Mail(app)
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 
+
 login_manager = LoginManager()
 login_manager.login_view = 'youth.ylogin'
 login_manager.init_app(app)
@@ -39,10 +44,10 @@ login_manager.login_message_category = 'info'
 
 from E_data_system.views.routes import view
 from E_data_system.admin.routes import admin_
-from  E_data_system.youthpage.routes import youth
+from E_data_system.youthpage.routes import youth
 from E_data_system.errors.routes import my_error_page
 from E_data_system.accounts.routes import user_account
-from   E_data_system.image_utils.img_process import pic_utils
+from E_data_system.image_utils.img_process import pic_utils
 
 
 

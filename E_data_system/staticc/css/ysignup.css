@@ -1,0 +1,35 @@
+@font-face {
+    src: url(/static/fonts/Montserrat-Bold.otf);
+    font-family: kennfont;
+}
+
+
+body{
+    background-color: #f8f8f1 !important;
+}
+
+/* !! important this give room to the page if nothing is there */
+.page-wrapper {
+    min-height: 100%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.signup-form form{
+    border-radius: 6px;
+    border: 3px solid #110f0f;
+    background: rgb(80, 79, 79);
+    box-shadow: 15px 5px 30px rgba(0, 0, 0, 0);
+}
+
+form .btn{
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+}

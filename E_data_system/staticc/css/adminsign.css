@@ -1,0 +1,69 @@
+@font-face {
+    src: url(/static/fonts/Montserrat-Bold.otf);
+    font-family: kennfont;
+}
+
+/* !! important this give room to the page if nothing is there */
+.page-wrapper {
+    min-height: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.signup-form form{
+    border-radius: 6px;
+    border: 3px solid #110f0f;
+    background: rgb(80, 79, 79);
+    box-shadow: 15px 5px 30px rgba(0, 0, 0, 0);
+}
+
+form .btn{
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.page-wrapper .loginbtn{
+    display: inline-block;
+    font-weight: 300;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #ffc600;
+    padding: 0 35px;
+    font-size: 16px;
+    font-family:kennfont;
+    font-weight: 300;
+    line-height: 40px;
+    border-radius: 5px;
+    color: #07294d;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+    -webkit-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    background-color: #ffc600;
+}
+
+.loginbtn:hover {
+    color: #ffc600;
+    border-color: #07294d;
+    background-color: #07294d;
+}
+
+.loginbtn:disabled {
+    color: #ffc600;
+    border-color: #07294d;
+    background-color: #07294d;
+}

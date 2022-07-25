@@ -6,10 +6,13 @@ from email.policy import default
 from graphene import lazy_import
 from E_data_system import db, app
 from E_data_system import login_manager
+from flask_admin import BaseView, expose
 from flask_admin.contrib.sqla import ModelView
 from flask_security import UserMixin, RoleMixin
 from flask_login import UserMixin, current_user
 from sqlalchemy.orm import relationship, backref
+from flask_security import Security,login_required
+from flask_security import SQLAlchemyUserDatastore
 from sqlalchemy import Table, Column, Integer, ForeignKey
 # from itsdangerous import TimedJSONWEBSignatureSerializer as Serializer
 
@@ -23,6 +26,11 @@ def load_user(user_id):
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+
+# roles_users = db.Table('roles_users',
+#     db.Column('position_id', db.Integer(), db.ForeignKey('position.id')),
+#     db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
+# )
 
 
 
@@ -88,6 +96,38 @@ class Youth_Registration(db.Model):
 
 
 
+# class Role(db.Model, RoleMixin):
+#     id = db.Column(db.Integer(), primary_key=True)
+#     name = db.Column(db.String(80), unique=True)
+
+
+
+# class Position(db.Model, UserMixin):
+#     id = db.Column(db.Integer, primary_key=True)
+#     email = db.Column(db.String(255), unique=True)
+#     password = db.Column(db.String(255))
+#     active = db.Column(db.Boolean())
+#     roles = db.relationship('Role', secondary=roles_users,
+#                             backref=db.backref('position', lazy='dynamic'))
+
+#     def __str__(self):
+#         return self.email
+
+# user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+# security = Security(app, user_datastore)
+
+
+# class InfomationView():
+#     @expose('/')
+#     def index(self):
+#         return self.render('info.html')
+
+class AnalyticsView(BaseView):
+    @expose('/')
+    def index(self):
+        return self.render('admin/info.html')
+
+
 class AdminSession(db.Model, UserMixin):
     id = db.Column(db.Integer(), primary_key=True)
     branch_id = db.Column(db.String(length=100), nullable=False, unique=True)
@@ -100,8 +140,8 @@ class AdminSession(db.Model, UserMixin):
 
 
 
-admin = Admin(app, name='Admin Panel', template_mode='bootstrap3')
 
+admin = Admin(app, name='Admin Dashboard', template_mode='bootstrap3')
 
 class Controller(ModelView):
     def is_accessible(self):
@@ -114,3 +154,4 @@ admin.add_view(Controller(User, db.session))
 admin.add_view(Controller(CRMAssembly, db.session))
 admin.add_view(Controller(Youth_Registration, db.session))
 admin.add_view(Controller(AdminSession, db.session))
+admin.add_view(AnalyticsView(name='Analytics', endpoint='analytics'))

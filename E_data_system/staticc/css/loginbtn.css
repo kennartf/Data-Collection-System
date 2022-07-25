@@ -1,0 +1,72 @@
+@font-face {
+    src: url(/static/fonts/Montserrat-Bold.otf);
+    font-family:kennfont;
+}
+
+.navbar {
+    border-bottom: 3px solid #b62b08;
+}
+
+/*navbar color*/
+*[right-16] {
+    color: brown !important;
+    font-family: kennfont;
+    font-size: 1.1rem;
+}
+
+/* .loginbtn {
+    border: 2px solid #ffc600;
+    font-family: kennfont;
+    font-size: 1.01rem;
+    line-height: 40px;
+    border-radius: 6px;
+    color: #07294d;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+    -webkit-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    background-color: #ffc600;
+} */
+
+.loginbtn{
+    display: inline-block;
+    font-weight: 300;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #ffc600;
+    padding: 0 35px;
+    font-size: 16px;
+    font-family:kennfont;
+    font-weight: 300;
+    line-height: 40px;
+    border-radius: 5px;
+    color: #07294d;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+    -webkit-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    background-color: #ffc600;
+}
+
+.loginbtn:hover {
+    color: #ffc600;
+    border-color: #07294d;
+    background-color: #07294d;
+}
+
+.loginbtn:disabled {
+    color: #ffc600;
+    border-color: #07294d;
+    background-color: #07294d;
+}
+
+
